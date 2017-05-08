@@ -1,8 +1,12 @@
 import React from 'react';
+import TodoListContainer from './todo_list/todo_list_container';
 
 const App = () => {
   return (
-    <h1>Todo Redux</h1>
+    <div>
+      <h1>Todo list with Redux!</h1>
+      <TodoListContainer />
+    </div>
   );
 };
 
