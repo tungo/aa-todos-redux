@@ -24,12 +24,13 @@ class TodoForm extends Component {
 
   submitForm(e){
     e.preventDefault();
+
     const newTodo = {
       id: uniqueId(),
       title: this.state.title,
       body: this.state.body
     };
-    
+
     this.props.receiveTodo(newTodo);
 
     this.setState({title: '', body: ''});
