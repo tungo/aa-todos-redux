@@ -30,8 +30,9 @@ const todosReducer = (state = initialState, action) => {
       return newState;
 
     case RECEIVE_TODO:
+      Object.assign(newState, state);
       newState[action.todo.id] = action.todo;
-      return Object.assign(newState, state);
+      return newState;
 
     case REMOVE_TODO:
       Object.assign(newState, state);

@@ -3,13 +3,17 @@ import React, { Component } from 'react';
 class TodoListItem extends Component {
   constructor(props){
     super(props);
+    // this.state = {done: this.props.item.done};
+
     this.updateTodo = this.updateTodo.bind(this);
   }
 
   updateTodo(e){
     e.preventDefault();
-    this.props.item.done = !this.props.item.done;
-    this.props.receiveTodo(this.props.item);
+    let newTodo = Object.assign({},this.props.item);
+    newTodo.done = !this.props.item.done;
+    this.props.receiveTodo(newTodo);
+
   }
 
   render(){
