@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def root
-    render text: "<div id=\"content\"></div>" 
+    render :root
   end
 end
