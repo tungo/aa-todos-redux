@@ -20,3 +20,10 @@ export const patchTodo = (todo) => (
     data: todo
   })
 );
+
+export const deleteTodo = (id) => (
+  $.ajax({
+    method: "DELETE",
+    url: `/api/todos/${id}`
+  })
+);

@@ -14,7 +14,7 @@ class TodoDetailView extends Component {
     return (
       <div>
         <p>{this.props.item.body}</p>
-        <button onClick={() => this.props.removeTodo(this.props.item.id)}>Delete Todo</button>
+        <button onClick={() => this.props.destroyTodo(this.props.item.id)}>Delete Todo</button>
       </div>
     );
   }
