@@ -19,7 +19,7 @@ class TodoList extends Component {
         <ul>
           {items}
         </ul>
-        <TodoForm createTodo={this.props.createTodo} />
+        <TodoForm createTodo={this.props.createTodo} errors={this.props.errors} />
       </div>
     );
   }

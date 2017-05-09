@@ -42,6 +42,9 @@ class TodoForm extends Component {
   render() {
     return (
       <form>
+        <ul>
+          {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
         <label>Title:
           <input type="text" onChange={this.changeTitle} value={this.state.title} />
         </label>
