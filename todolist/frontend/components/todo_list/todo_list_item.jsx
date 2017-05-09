@@ -17,7 +17,7 @@ class TodoListItem extends Component {
     e.preventDefault();
     let newTodo = Object.assign({},this.props.item);
     newTodo.done = !this.props.item.done;
-    this.props.receiveTodo(newTodo);
+    this.props.updateTodo(newTodo);
   }
 
   toggleView(e){

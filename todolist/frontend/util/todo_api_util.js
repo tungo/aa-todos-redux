@@ -13,7 +13,7 @@ export const postTodo = (todo) => (
   })
 );
 
-export const updateTodo = (todo) => (
+export const patchTodo = (todo) => (
   $.ajax({
     method: "PATCH",
     url: `/api/todos/${todo.id}`,

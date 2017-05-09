@@ -4,7 +4,7 @@ export const REMOVE_TODO = "REMOVE_TODO";
 
 import { receiveErrors, clearErrors } from './error_actions';
 
-import { requestTodos, postTodo, updateTodo } from '../util/todo_api_util';
+import { requestTodos, postTodo, patchTodo } from '../util/todo_api_util';
 
 export const receiveTodos = (todos) => {
   return {
@@ -33,10 +33,14 @@ export const fetchTodos = () => dispatch => {
 
 export const createTodo = (todo) => dispatch => (
   postTodo(todo).then(
-    response => {
-      dispatch(clearErrors());
-      return dispatch(receiveTodo(response));
-    },
+    response => dispatch(receiveTodo(response)),
+    err => dispatch(receiveErrors(err.responseJSON))
+  )
+);
+
+export const updateTodo = (todo) => dispatch => (
+  patchTodo(todo).then(
+    response => dispatch(receiveTodo(response)),
     err => dispatch(receiveErrors(err.responseJSON))
   )
 );
