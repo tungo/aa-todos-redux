@@ -6,6 +6,11 @@ class TodoDetailView extends Component {
   }
 
   render() {
+    if (this.props.hidden){
+      return (
+        <div></div>
+      );
+    }
     return (
       <div>
         <p>{this.props.item.body}</p>

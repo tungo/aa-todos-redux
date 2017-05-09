@@ -5,9 +5,12 @@ import TodoDetailViewContainer from './todo_detail_view_container';
 class TodoListItem extends Component {
   constructor(props){
     super(props);
-    // this.state = {done: this.props.item.done};
+    this.state = {
+      hidden: true
+    };
 
     this.updateTodo = this.updateTodo.bind(this);
+    this.toggleView = this.toggleView.bind(this);
   }
 
   updateTodo(e){
@@ -17,12 +20,18 @@ class TodoListItem extends Component {
     this.props.receiveTodo(newTodo);
   }
 
+  toggleView(e){
+    e.preventDefault();
+    let newState = !this.state.hidden;
+    this.setState({hidden: newState});
+  }
+
   render(){
     return (
       <li>
-        {this.props.item.title}
+        <h1 onClick={this.toggleView}>{this.props.item.title}</h1>
         <button onClick ={this.updateTodo}> {this.props.item.done ? "UNDO" : "DONE"}</button>
-        <TodoDetailViewContainer item={this.props.item} />
+        <TodoDetailViewContainer hidden={this.state.hidden} item={this.props.item} />
       </li>
     );
   }
