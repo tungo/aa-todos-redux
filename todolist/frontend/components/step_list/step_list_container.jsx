@@ -6,7 +6,8 @@ import { receiveStep } from '../../actions/step_actions';
 import StepList from './step_list';
 
 const mapStateToProps = (state, { todo_id }) => ({
-  steps: stepsByTodoId(state, todo_id), todo_id
+  steps: stepsByTodoId(state, todo_id),
+  todo_id
 });
 
 const mapDispatchToProps = (dispatch) => ({
