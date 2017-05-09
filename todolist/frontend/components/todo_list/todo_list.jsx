@@ -12,14 +12,14 @@ class TodoList extends Component {
   }
   render(){
     const items = this.props.todos.map((el) => (
-      <TodoListItem key={el.id} item={el} receiveTodo={this.props.receiveTodo} removeTodo={this.props.removeTodo}/>
+      <TodoListItem key={el.id} item={el} createTodo={this.props.createTodo} removeTodo={this.props.removeTodo}/>
     ));
     return (
       <div>
         <ul>
           {items}
         </ul>
-        <TodoForm receiveTodo={this.props.receiveTodo} />
+        <TodoForm createTodo={this.props.createTodo} />
       </div>
     );
   }

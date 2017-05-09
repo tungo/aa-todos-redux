@@ -26,14 +26,17 @@ class TodoForm extends Component {
     e.preventDefault();
 
     const newTodo = {
-      id: uniqueId(),
-      title: this.state.title,
-      body: this.state.body
+      todo: {
+        title: this.state.title,
+        body: this.state.body,
+        done: false
+      }
     };
 
-    this.props.receiveTodo(newTodo);
+    this.props.createTodo(newTodo).then(
+      () => this.setState({title: '', body: ''})
+    );
 
-    this.setState({title: '', body: ''});
   }
 
   render() {
