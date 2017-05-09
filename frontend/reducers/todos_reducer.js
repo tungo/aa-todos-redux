@@ -24,9 +24,7 @@ const todosReducer = (state = initialState, action) => {
 
   switch(action.type) {
     case RECEIVE_TODOS:
-      action.todos.forEach((el) => {
-        newState[el.id] = el ;});
-
+      action.todos.forEach((el) => (newState[el.id] = el));
       return newState;
 
     case RECEIVE_TODO:
