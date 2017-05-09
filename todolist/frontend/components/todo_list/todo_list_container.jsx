@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchTodos: () => dispatch(fetchTodos()),
   createTodo: (todo) => dispatch(createTodo(todo)),
   removeTodo: (id) => dispatch(removeTodo(id)),
-  updateToDo: (todo) => dispatch(updateTodo(todo))
+  updateTodo: (todo) => dispatch(updateTodo(todo))
 });
 
 export default connect(
