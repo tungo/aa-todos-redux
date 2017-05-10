@@ -3,5 +3,7 @@ export const allTodos = (state) => (
 );
 
 export const stepsByTodoId = (state, todoId) => (
-  Object.keys(state.steps).map(id => state.steps[id]).filter(obj => obj.todo_id === todoId)
+  Object.keys(state.steps)
+    .map(id => state.steps[id])
+    .filter(obj => obj.todo_id === todoId)
 );

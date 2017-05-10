@@ -8,6 +8,10 @@ class StepList extends Component {
     super(props);
   }
 
+  componentDidMount(){
+    this.props.fetchSteps(this.props.todoId);
+  }
+
   render() {
     const stepItems = this.props.steps.map((step, idx) => {
       return <StepListItemContainer key={idx} item={step} todoId ={this.props.todoId} />;

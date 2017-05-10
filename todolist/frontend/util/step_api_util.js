@@ -1,14 +1,14 @@
-export const requestSteps = () => (
+export const requestSteps = (todoId) => (
   $.ajax({
     method: "GET",
-    url: "/api/steps"
+    url: `/api/todos/${todoId}/steps`
   })
 );
 
 export const postStep = (step) => (
   $.ajax({
     method: "POST",
-    url: "/api/steps",
+    url: `/api/todos/${step.todoId}/steps`,
     data: step
   })
 );
@@ -16,14 +16,14 @@ export const postStep = (step) => (
 export const patchStep = (step) => (
   $.ajax({
     method: "PATCH",
-    url: `/api/steps/${step.step.id}`,
+    url: `/api/todos/${step.step.todoId}/steps/${step.step.id}`,
     data: step
   })
 );
 
-export const deleteStep = (id) => (
+export const deleteStep = (todoId, id) => (
   $.ajax({
     method: "DELETE",
-    url: `/api/steps/${id}`
+    url: `/api/todos/${todoId}/steps/${id}`
   })
 );

@@ -1,6 +1,6 @@
 class Api::StepsController < ApplicationController
   def index
-    render json: Step.find_by(todo_id: params[:todo_id])
+    render json: Step.where(todo_id: params[:todo_id])
   end
 
   def show
